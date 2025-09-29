@@ -9,6 +9,10 @@ both the tax and the tip.  Format the output so that all of the values
 are displayed using two decimal places.  (17 lines)
 """
 
+mealCost = float (input("How much does your meal cost? "))
+
+
+
 """
 Exercise 7:  Sum of the First n Positive Integers
 Write a program that reads a positive integer, n, from the user and 
