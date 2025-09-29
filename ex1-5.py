@@ -53,7 +53,7 @@ def areaField():
     width = float(input("Width: "))
     length = float(input("Length: "))
 
-    areaField = (width*length)/43560
+    areaField = (width * length) / 43560
     print("Area of the field is " + str(areaField) + " " + "acres squared")
 
 
@@ -88,3 +88,4 @@ def bottleDeposits():
 bottleDeposits()
 #Testing Suite
 #areaRoom()
+       

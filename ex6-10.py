@@ -3,15 +3,18 @@ Exercise 6: Tax and Tip
 The program you create for this exercise will begin by reading the cost
 of a meal ordered at a restaurant from the user.  Then your program will
 compute the tax and tip for the meal.  Use your local tax rate when 
-computing the amount of tax owing.  Compute the tip as 18 percent of  the 
+computing the amount of tax owing.  Compute the tip as 18 percent of the 
 meal amount (without tax).  The output from your program should include
 both the tax and the tip.  Format the output so that all of the values
 are displayed using two decimal places.  (17 lines)
 """
-
+"""
 mealCost = float (input("How much does your meal cost? "))
-
-
+tax = float (mealCost * .0575)
+tip = float (mealCost * 0.18)
+fullMealCost = float (mealCost + tax + tip)
+print(fullMealCost)
+"""
 
 """
 Exercise 7:  Sum of the First n Positive Integers
@@ -22,6 +25,12 @@ sum = (n*(n+1))/2
 (12 lines)
 """
 
+pInt = float (input("Positive integer: "))
+sum = (pInt*(pInt+1))/2
+print(sum)
+
+
+
 """
 Exercise 8:  Widgets and Gizmos
 An online retailer sells two products:   widgets and gizmos.  Each widget 
@@ -30,6 +39,9 @@ the number of gizmos in an order from the user.  Then your program should
 compute and display the total weight of the order.  (15 lines)
 
 """
+
+
+
 
 """
 Exercise 9:  Compound Interest
@@ -58,5 +70,3 @@ Hint:  you will probably find the log10 function in the math module helpful
 for computing the second last item in the list.
 """
 
-if __name__ == "__main__":
-    print("Hi there!")
