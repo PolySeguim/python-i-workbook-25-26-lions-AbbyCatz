@@ -9,6 +9,11 @@ research skills to determine how to convert from MPG to L/100km.
 Then create a program that reads a value from the user in American units
 and display the equivalent fuel efficiency in Canadian units.
 """
+"""
+mpg = float (input("How many mpg? "))
+lphkm = float (mpg * 235.21)
+print(lphkm)
+"""
 
 """
 Exercise 12:  Distance Between Two Points on Earth
@@ -36,7 +41,7 @@ need to convert the user's input from degrees to radians before computing
 the distance with the formula discussed previously.  The math module 
 contains a function named RADIANS which converts from degrees to radians.
 """
-
+import math
 def earthDistance():
     t1 = float(input("t1: "))
     g1 = float(input("g1: "))
@@ -44,11 +49,10 @@ def earthDistance():
     g2 = float(input("g2: "))
     #distance = 6371.01 x arccos(sin(t1) x sin(t2) + cos(t1) x cos(t2) x cos(g1-g2))
 
-    distance = 6371.01 * math.a23
-    cos(math.sin(t2) + math.cos(t1) * math.cos(t2) * math.cos(g1-g2))
+    distance = 6371.01 * math.acos(math.sin(t2) + math.cos(t1) * math.cos(t2) * math.cos(g1-g2))
     print(distance)
 
-earthDistance()
+#earthDistance()
 """
 Exercise 13: Making Change
 Consider the software that runs on a self-checkout machine.  One task that
@@ -68,6 +72,22 @@ The two dollar coin, referred to as a toonie, was introduced 9 years later.
 It's name is derived from the combination of the number two
 and the name of the loonie.
 """
+
+change = float (input("How much change do you have? "))
+toonie = change // 200
+toonieRemainder = toonie % 200
+loonie = toonieRemainder // 100
+loonieRemainder = loonie % 100
+quarter = loonieRemainder // 25
+quarterRemainder = quarter % 25
+dime = quarterRemainder // 10
+dimeRemainder = dime % 10
+nickel = dimeRemainder // 5
+nickelRemainder = nickel % 5
+penny = nickelRemainder // 1
+nickelRemainder = penny % 1
+print("You have", toonie, "toonies", loonie, "loonies", quarter, "quarters", dime, "dimes", nickel, "nickels, and", penny, "pennies")
+
 
 """
 Exercise 14:  Height Units
@@ -93,5 +113,4 @@ the equivalent distance in inches, yards, and miles.
 63360 inches = 1760 yards = 1 mile
 """
 
-if __name__ == "__main__":
-    print("Hello World!")
+
