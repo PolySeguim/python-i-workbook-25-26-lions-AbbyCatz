@@ -57,11 +57,13 @@ cylinder, along with its height, from the user and computes its volume.
 Display the result rounded to one decimal place.
 (15 lines)
 """
-import math
-cr = float(input("What is the radius? "))
-ch = float(input("What is the height? "))
-cvolume = math.pi * cr ** 2 * ch
-print(round(cvolume(1)))
+def cylinder():
+    import math
+    cr = float(input("What is the radius? "))
+    ch = float(input("What is the height? "))
+    cvolume = math.pi * cr ** 2 * ch
+    print(round(cvolume, 1))
+#cylinder()
 
 """
 Exercise 19:  Free Fall
@@ -73,7 +75,11 @@ use the formula vf = (vi**2 + 2ad)**(1/2) to compute the final speed vf,
 when the initial speed, vi, acceleration, a, and distance, d, are known.
 (16 lines)
 """
-
+def fall():
+    d = float(input("What is the distance of the drop? "))
+    vf = (0 ** 2 + 2 * 9.8 * d) ** (1/2)
+    print(vf)
+#drop()
 
 """
 Exercise 20: Ideal Gas Law
@@ -98,3 +104,12 @@ by 5/9 and then add 273.15 to it.
 
 (19 lines)
 """
+def pvnrt():
+    p = float(input("What is the pressure? "))
+    v = float(input("What is the volume? "))
+    tOld = float(input("What is the temperature in Celcius? "))
+    t = tOld + 273.15
+    r = 8.314
+    n = p * v / r * t
+    print(n)
+#pvnrt()
