@@ -101,6 +101,6 @@ def myFunction():
         abby.left(180)
         abby.penup()
         abby.forward(25)
-        abby.right(90)      
+        abby.right(90)     
 #myFunction()
     
