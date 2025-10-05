@@ -9,11 +9,12 @@ research skills to determine how to convert from MPG to L/100km.
 Then create a program that reads a value from the user in American units
 and display the equivalent fuel efficiency in Canadian units.
 """
-"""
-mpg = float (input("How many mpg? "))
-lphkm = float (mpg * 235.21)
-print(lphkm)
-"""
+def gallons(): 
+    mpg = float (input("How many mpg? "))
+    lphkm = float (mpg * 235.21)
+    print(lphkm)
+#gallons()
+
 
 """
 Exercise 12:  Distance Between Two Points on Earth
@@ -72,22 +73,22 @@ The two dollar coin, referred to as a toonie, was introduced 9 years later.
 It's name is derived from the combination of the number two
 and the name of the loonie.
 """
-
-change = float (input("How much change do you have? "))
-toonie = change // 200
-toonieRemainder = toonie % 200
-loonie = toonieRemainder // 100
-loonieRemainder = loonie % 100
-quarter = loonieRemainder // 25
-quarterRemainder = quarter % 25
-dime = quarterRemainder // 10
-dimeRemainder = dime % 10
-nickel = dimeRemainder // 5
-nickelRemainder = nickel % 5
-penny = nickelRemainder // 1
-nickelRemainder = penny % 1
-print("You have", toonie, "toonies", loonie, "loonies", quarter, "quarters", dime, "dimes", nickel, "nickels, and", penny, "pennies")
-
+def money():
+    change = int(input("How much change do you have? "))
+    toonie = change // 200
+    change = change-(toonie * 200)
+    loonie = change // 100
+    change = change-(loonie * 100)
+    quarter = change // 25
+    change = change-(quarter * 25)
+    dime = change // 10
+    change = change-(dime * 10)
+    nickel = change // 5
+    change = change-(nickel * 5)
+    penny = change // 1
+    change = change-(penny * 1)
+    print("You have", toonie, "toonies", loonie, "loonies", quarter, "quarters", dime, "dimes", nickel, "nickels, and", penny, "pennies")
+money()
 
 """
 Exercise 14:  Height Units
@@ -98,8 +99,17 @@ by a number of inches.  Once the values are read, your program should
 compute and display the equivalent number of centimeters.
 
 *** HINT ***
-One foot is 12 inches.  One in ch is 2.54 centimeters.
+One foot is 12 inches.  One inch is 2.54 centimeters.
 """
+
+def measurement():
+    feetNum = float(input("How tall are you without extra inches? "))
+    inchNum = float(input("How many extra inches tall are you without feet? "))
+    heightNum = (feetNum * 12 + inchNum)
+    metricNum = (heightNum * 2.54)
+    print(metricNum)
+#measurement()
+
 
 """
 Exercise 15:  Distance Units
@@ -112,5 +122,10 @@ the equivalent distance in inches, yards, and miles.
 36 inches = 1 yard = 0.00056818 miles
 63360 inches = 1760 yards = 1 mile
 """
-
-
+def metric():
+    feetMea = float(input("How many feet? "))
+    inch = (feetMea * 12)
+    yard = (inch / 36)
+    mile = (inch / 63360)
+    print("You have", inch,  "inches, ", yard, "yards, and", mile, "miles")
+#metric()

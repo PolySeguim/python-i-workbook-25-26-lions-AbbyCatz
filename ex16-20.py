@@ -9,8 +9,12 @@ module in your calculations.
 Hint:  The are of  circle is computed using the formula area = pi*r**2.  The 
 volume of a sphere is computed using the formula volume = 4/3 * pi * r**3.
 """
-
-
+def radius():
+    import math
+    r = int(input("What is the radius? "))
+    area = math.pi*r**2
+    volume = 4/3 * math.pi * r**3
+    print("the area is", area, "and the volume is", volume)
 
 """
 Exercise 17:  Heat Capacity
@@ -37,6 +41,13 @@ Hint:  You will need to look up the factor for converting between Joules
 and kilowatt hours to complete the last part of this exercise.
 (25 lines)
 """
+def electric():
+    m = float(input("What is the mass of the water? "))
+    deltaT = float(input("How much does the temperature change? "))
+    q = m * 4.186 * deltaT
+    kw = float((4.186 * 3.6) * deltaT)
+    electricity = float(0.089 * kw)
+    print(electricity)
 
 """
 Exercise 18:  Volume of a Cylinder
@@ -46,6 +57,11 @@ cylinder, along with its height, from the user and computes its volume.
 Display the result rounded to one decimal place.
 (15 lines)
 """
+import math
+cr = float(input("What is the radius? "))
+ch = float(input("What is the height? "))
+cvolume = math.pi * cr ** 2 * ch
+print(round(cvolume(1)))
 
 """
 Exercise 19:  Free Fall
@@ -82,6 +98,3 @@ by 5/9 and then add 273.15 to it.
 
 (19 lines)
 """
-
-if __name__ == "__main__":
-    print("Hi there!")
