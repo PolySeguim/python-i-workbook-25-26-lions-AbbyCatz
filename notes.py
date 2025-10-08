@@ -19,7 +19,7 @@ multiple lines comments
 """
 Test SUITE
 """
-
+"""
 whatType(3)
 whatType(3.0)
 whatType("3.0")
@@ -28,9 +28,9 @@ whatType("polyana")
 whatType('p')
 
 #Create a variable named message
-message = """this is a
+message = this is a
 multiline message
-to my bestie."""
+to my bestie.
 print(message)
 
 #test inputs to print and see how they print
@@ -51,7 +51,7 @@ print(newName)
 
 classOf2026 = ["Student 1", "Student 2"]
 seniors = "not a good variable name...  why???"
-
+"""
 # MLS formatting for GEEKS
 #Global variable for things that cannot change
 
@@ -68,7 +68,7 @@ dolla$$$$
 def = "def"
 class = "python"
 """
-
+"""
 print(20+12)
 hour = 3
 print(hour - 1)
@@ -112,3 +112,5 @@ print(float(3.1415))
 
 print(str(1977))
 print(str(3.0))
+
+"""
