@@ -88,11 +88,13 @@ categories. Ensure that all of the charges are displayed using 2
 decimal points
 """
 
-minutes = float(input("How many minutes a month are you on your phone? "))
-textMessages = float(input("How many text messages do you send per month? "))
-costNotTax = (15.00 + 0.44 + 0.25 * (minutes - 50) + 0.15 * (textMessages - 50))
-allCost = (costNotTax + costNotTax * 0.05)
-print(round(allCost, 2))
+def phoneBill():
+    minutes = float(input("How many minutes a month are you on your phone? "))
+    textMessages = float(input("How many text messages do you send per month? "))
+    costNotTax = (15.00 + 0.44 + 0.25 * (minutes - 50) + 0.15 * (textMessages - 50))
+    allCost = (costNotTax + costNotTax * 0.05)
+    print(round(allCost, 2))
+
 
 
 
@@ -102,3 +104,4 @@ print(round(allCost, 2))
 #evenOdd()
 #alphabetLetters()
 #triangleSides()
+#phoneBill()
