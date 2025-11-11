@@ -13,7 +13,7 @@ def setName(fName):
         
 
 def getName():
-    return f_name
+    return getName
 
 
 #Function Calls

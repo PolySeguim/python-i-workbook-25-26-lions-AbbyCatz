@@ -1,3 +1,4 @@
+import math
 """
 Exercise 51:  Letter Grade to Grade Points
 
@@ -46,7 +47,8 @@ INVALID = -1
 def readLetter():
     letter = input("Enter a letter grade: ")
     letter = letter.upper()
-    return letter
+    readLetter()
+
 
 def assignGPA(letter):
     gpa = 0
@@ -54,24 +56,29 @@ def assignGPA(letter):
         gpa = A
     elif(letter == "A-"):
         gpa = A_MINUS
+    elif(letter == "B+"):
+        gpa = B_PLUS
+    elif(letter == "B"):
+        gpa = B
+    elif(letter == "B-"):
+        gpa = B_MINUS
+    elif(letter == "C+"):
+        gpa = C_PLUS
+    elif(letter == "C"):
+        gpa = C
+    elif(letter == "C-"):
+        gpa = C_MINUS
+    elif(letter == "D+"):
+        gpa = D_PLUS
+    elif(letter == "D"):
+        gpa = A_MINUS
+    elif(letter == "A-"):
+        gpa = D
+    elif(letter == "D-"):
+        gpa = D_MINUS
     else:
         gpa = INVALID
-    print(gpa)
-    return gpa
-
-def assignLetter(given_gpa):
-    letter_grade
-    if(given_gpa >= 4.0):
-        letter_grade = A
-    elif(given_gpa < 4.0 and given_gpa >= 3.7):
-        letter_grade = "A-"
-    elif(given_gpa < 3.7 and given_gpa >= 3.3):
-        letter_grade = "B+"
-    else:
-        letter_grade = "INVALID"
-
-
-
+    assignGPA(letter)
 
 
 """
@@ -85,12 +92,42 @@ grade.  Your program should report A+ for a 4.0 (or greater) grade
 point average.
 """
 
+def assignLetter(given_gpa):
+    if(given_gpa >= 4.0):
+        letter_grade = "A+"
+    elif(given_gpa < 4.0 and given_gpa >= 3.7):
+        letter_grade = "A-"
+    elif(given_gpa < 3.7 and given_gpa >= 3.3):
+        letter_grade = "B+"
+    elif(given_gpa < 3.3 and given_gpa >= 3.0):
+        letter_grade = "B"
+    elif(given_gpa < 3.0 and given_gpa >= 2.7):
+        letter_grade = "B-"
+    elif(given_gpa < 2.7 and given_gpa >= 2.3):
+        letter_grade = "C+"
+    elif(given_gpa < 2.3 and given_gpa >= 2.0):
+        letter_grade = "C"
+    elif(given_gpa < 2.0 and given_gpa >= 1.7):
+        letter_grade = "C-"
+    elif(given_gpa < 1.7 and given_gpa >= 1.3):
+        letter_grade = "D+"
+    elif(given_gpa < 1.4 and given_gpa >= 1.0):
+        letter_grade = "D"
+    elif(given_gpa < 1.0 and given_gpa >= 0.7):
+        letter_grade = "D-"
+    elif(given_gpa < 0.7 and given_gpa >= 0):
+        letter_grade = "F"
+    else:
+        letter_grade = "INVALID"
+    assignLetter(given_gpa)
+
+
 """
 Exercise 66:  Compute a Grade Point Average
 Exercise 51 includes a table that shows the conversion from letter
 grades to grade points at a particular academic institution.  In this
 exercise you will compute the grade point average of an arbitrary number
-of letter grades entered by teh user.  The user will enter a blank
+of letter grades entered by the user.  The user will enter a blank
 line to indicate that all of the grades have been provided.  For example,
 if the user enters A, followed by C+, followed by B, followed by a blank
 line then your program should report a grade point average of 3.1.
@@ -99,3 +136,118 @@ exercise.  Your program does not need to do any error checking.  It can
 assume that each value entered by the user will be a valid letter grade
 or a blank line.
 """
+"""
+def giveAvgGPA():
+    while True: 
+        grade1 = input("Input letter grade: ")
+        grade2 = input("Input letter grade: ")
+        grade3 = input("Input letter grade: ")
+        grade4 = input("Input letter grade: ")
+        grade5 = input("Input letter grade: ")
+        grade6 = input("Input letter grade: ")
+        grade7 = input("Input letter grade: ")
+        grade8 = input("Input letter grade: ")
+"""
+
+def giveAvgGPA(grade):
+    if (grade == "A+" or "A"):
+        gpa = 4.0
+    elif(grade == "A-"):
+        gpa = 3.7
+    elif(grade == "B+"):
+        gpa = 3.3
+    elif(grade == "B"):
+        gpa = 3.0
+    elif(grade == "B-"):
+        gpa = 2.7
+    elif(grade == "C+"):
+        gpa = 2.3
+    elif(grade == "C"):
+        gpa = 2.0
+    elif(grade == "C-"):
+        gpa = 1.7
+    elif(grade == "D+"):
+        gpa = 1.3
+    elif(grade == "D"):
+        gpa = 1.0
+    elif(grade == "D-"):
+        gpa = 0.7
+    elif(grade == "F"):
+        gpa = 0.0
+    else:
+        gpa = INVALID
+    return gpa
+
+
+
+"""
+sumofLets = 0
+count = 0  
+letters = float(input("Input letter grade: "))           
+for number in letters:
+    sumofLets += letters
+    count += 1
+average = sumofLets / count
+print("Your gpa is:", letters)
+"""
+"""
+a = []
+numGrades = int(input("How many grades do you have? "))
+
+
+for i in range(numGrades):
+    print(f"\n--- Grade {i+1} ---")
+    grade = input("Input letter grade: ")
+    a.append(grade)
+    if(grade == "A+"):
+        grade = 4.0
+    elif(grade == "A"):
+        grade = 4.0 
+    elif(grade == "A-"):
+        grade = 3.7
+    elif(grade == "B+"):
+        grade = 3.3
+    elif(grade == "B"):
+        grade = 3.0
+    elif(grade == "B-"):
+        grade = 2.7
+    elif(grade == "C+"):
+        grade = 2.3
+    elif(grade == "C"):
+        grade = 2.0
+    elif(grade == "C-"):
+        grade = 1.7
+    elif(grade == "D+"):
+        grade = 1.3
+    elif(grade == "D"):
+        grade = 1.0
+    elif(grade == "D-"):
+        grade = 0.7
+    elif(grade == "F"):
+        grade = 0.0
+    else:
+        print("Invalid")
+
+print(a)
+finalGrade = sum(a)
+finalGrade / numGrades
+number = finalGrade / numGrades
+print("your gpa is", number)
+"""
+def getGrades():
+    gradesList = []
+    grade = "nothing"
+    while grade != "":
+        grade = input("What is the grade ")
+        gradesList.append(grade)
+    return gradesList
+
+def gpaCalculator(grades):
+    gpav = 0
+    for i in range(len(grades)-1):
+        gpav += giveAvgGPA(grades[i])
+    gpav = gpav/(len(grades)-1)
+    print(gpav)
+    return gpav
+gpaCalculator(getGrades())
+    
