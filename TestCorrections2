@@ -1,0 +1,91 @@
+"""
+a=9
+while a>0 :
+    print(a)
+    a-=1
+    
+    if a==1:
+        break
+    else:
+        print("Reached 0")
+ 
+
+for i in range(3):
+    for j in range(3):
+        print("*", end=" ")
+    print()
+
+
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+
+x = 0 
+while x < 10:
+    x+=2
+    print(x)
+
+result = 0
+for i in range(4):
+    if i % 2 == 0:
+        result = result + 1
+    else:
+        result = result - 1
+print(result)
+
+nums = [10, 20, 30]
+for num in nums:
+    if num > 25:
+        print("Large number found")
+        break
+    else:
+        print("No large numbers")
+
+count = 0
+while count < 5:
+    print(count)
+    if count == 2:
+        break
+    count += 1
+else:
+    print("Loop completed")
+
+i = 1
+while i < 100:
+    print (i)
+    i += 2
+
+x = 0
+a = 5
+b = 5
+if a > 0:
+    if b < 0:
+        x = x + 5
+    elif a > 5:
+        x = x + 4
+    else:
+        x = x + 3
+else:
+    x = x + 2
+print(x)
+
+x = 0
+while x < 3:
+    x += 1
+    if x == 2:
+        continue
+    print(x)
+"""
+
+def myIntegers():
+    #numInts = int(input("How many integers will you input? "))
+    myList= []
+    
+    num = 1
+    while num!=0:
+        num = int(input("What is your number?  Enter 0 to quit "))
+        myList.append(num)
+    print(myList)
+    return myList
+myIntegers()

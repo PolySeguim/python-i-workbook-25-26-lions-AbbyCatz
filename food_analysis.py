@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 import csv
+import statistics
 
 # Define the lists to store data
 restaurants = []
@@ -11,6 +12,7 @@ calories = []
 fats = []
 sodiums = []
 sugars = []
+
 
 list_data = []
 unique_restaurants = set()
@@ -108,6 +110,23 @@ def restaurants_calories_report():
         
     return report
 
+def calculateMean(list_of_values):
+    return statistics.mean(list_of_values)
+
+def calc_st_dev(list_of_values):
+    return statistics.stdev(list_of_values)
+
+def zscores(list_of_values):
+    zScores = []
+    mean = calculateMean(list_of_values)
+    st_dev = calc_st_dev(list_of_values)
+    
+    for i in list_of_values:
+        z_score = (i - mean)/st_dev
+        zScores.append(z_score)
+        
+        return zScores
+
 
 def main():
     file_path = choose_file()
@@ -136,6 +155,8 @@ def main():
     print("Number of items under ", calorie_value, " calories are ", filter_calories_count_under(calorie_value))
 
     print("Sugars for Burger King: " , sugars_per_restaurant(sugars, "Burger King"))
+    
+    
     
     print("\nList of restaurants and their total sugars :\n")
     report = restaurants_sugars_report()
