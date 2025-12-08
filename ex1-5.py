@@ -6,14 +6,20 @@ address formatted in the manner that you would usually see it
 on the outside of an envelope.  Your program does not need to 
 read any input from the user.  (9 lines)
 """
-
+"""
+print("Abigail Molloy \n 9557 Semaphore Ct. \n West Chester OH, 45069")
+"""
 """
 Exercise 2:  Hello
 Write a program that asks the user to enter his or her name.  
 The program should respond with a message that says hello to 
 the user, using his or her name.  (9 lines)
 """
+"""
+name = input("What is your name? ")
 
+print("Hello", name)
+"""
 """
 Exercise 3:  Area of a Room
 Write a program that asks the user to enter the width and 
@@ -24,6 +30,7 @@ numbers.  Include units in your prompt and output message;
 either feet or meters, depending on which unit you are more 
 comfortable working with.  (13 lines)
 """
+
 def areaRoom():
     print("Area of Room")
     units = input("What units are you using?  feet or meters: ")
@@ -40,6 +47,15 @@ farmer’s field from the user in feet.  Display the
 area of the field in acres.  
 Hint: There are 43,560 square feet in an acre
 """
+
+def areaField():
+    print("Area of Field")
+    width = float(input("Width: "))
+    length = float(input("Length: "))
+
+    areaField = (width * length) / 43560
+    print("Area of the field is " + str(areaField) + " " + "acres squared")
+
 
 """
 Exercise 5:  Bottle Deposits
@@ -69,6 +85,7 @@ def bottleDeposits():
     # number_two_decimal = "{:.2f}".format(number_string)
     # print(number_two_decimal)
 
-bottleDeposits()
+#bottleDeposits()
 #Testing Suite
 #areaRoom()
+ 
